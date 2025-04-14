@@ -87,7 +87,7 @@ def pois_distr_calc() -> None:
 
 # ---------- формула Бернулли
 
-def bern_form(n: int, k: int, p: float):
+def bern_form(n: int, k: int, p: float) -> decimal.Decimal:
 	"""Закон распределения СВ по формуле Бернулли"""
 
 	q = 1 - p
@@ -110,7 +110,7 @@ def bern_form(n: int, k: int, p: float):
 
 	return result
 
-def bern_form_calc(n: int, max_k: int, p: float, min_k: int = 0):
+def bern_form_calc(n: int, max_k: int, p: float, min_k: int = 0) -> tuple[decimal.Decimal]:
 	"""Вычисление формулы Бернулли от min_k до max_k"""
 
 	Pi = [bern_form(n=n, k=k, p=p) for k in range(min_k, max_k + 1)]
