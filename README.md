@@ -21,6 +21,11 @@ F\left( x \right) = \sum_{x_{i} \le x}^{}p_{i}
 P\left( k \right) = \frac{\left( \lambda t \right)^k}{m!}e^{- \lambda t}, \quad \lambda = n \cdot p_{n}=const
 ```
 
+**Мат ожидание и дисперсия распределения Пуассона**
+```math
+M\left( x \right) = D\left( x \right) = \lambda
+```
+
 ---
 
 **Формула Бернулли**
@@ -92,7 +97,7 @@ n, \ M \le N
 ```
 
 ```math
-x_{n} = m \quad \left( m=0, 1, 2, \ ... \ min\! \left( n, \ M \right) \right)
+x_{n} = m \quad \left( m=0, 1, 2, \ ... \ min\, \left( n, \ M \right) \right)
 ```
 
 **Мат ожидание гипергеометрического распределения**
