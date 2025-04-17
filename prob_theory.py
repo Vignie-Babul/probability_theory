@@ -66,14 +66,14 @@ def pois_distr(k: int, l: int, t: int = 1) -> decimal.Decimal:
 	k_fact = strd(factorial(k))
 	ltk_k_fact = ltk / k_fact
 	elt = strd(e) ** (-l_ * t_)
+	result = ltk_k_fact * elt
 
-	print(f'{"k":>10} = {k_}')
-	print(f'{"ltk":>10} = {ltk}')
-	print(f'{"k_fact":>10} = {k_fact}')
-	print(f'{"ltk_k_fact":>10} = {ltk_k_fact}')
-	print(f'{"elt":>10} = {elt}')
+	lt_ = f'{l}*{t}'
+	first_row = f'({lt_})**{k} / {k}! * e**-{lt_}'
+	second_row = f'{ltk} / {k_fact} * {elt}'
+	print(f'P({k}) = {first_row} =\n= {second_row} =\n= {result}\n')
 
-	return ltk_k_fact * elt
+	return result
 
 def pois_distr_calc() -> None:
 	"""Вычисление распределения Пуассона"""
