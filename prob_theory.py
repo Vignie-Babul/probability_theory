@@ -55,7 +55,7 @@ def distr_F(xi: tuple[int], pi: tuple[decimal.Decimal]) -> None:
 
 # ---------- распределение Пуассона
 
-def pois_distr(k: int, l: int, t: int) -> decimal.Decimal:
+def pois_distr(k: int, l: int, t: int = 1) -> decimal.Decimal:
 	"""Распределение Пуассона"""
 
 	k_ = strd(k)
