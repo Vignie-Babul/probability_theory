@@ -75,14 +75,13 @@ def pois_distr(k: int, l: int, t: int = 1) -> decimal.Decimal:
 
 	return result
 
-def pois_distr_calc() -> None:
+def pois_distr_calc(max_k: int, l: int, t: int = 1, min_k: int = 0) -> None:
 	"""Вычисление распределения Пуассона"""
 
-	for k in range(6):
-		result = pois_distr(k, 5, 60/1000)
-		divide()
-		print(result)
-		print('\n')
+	for k in range(min_k, max_k + 1):
+		pois_distr(k, l, t)
+
+	divide()
 
 
 # ---------- формула Бернулли
