@@ -10,8 +10,8 @@ def divide(char: str = '-', length: int = 30) -> None:
 	"""Разделитель с символом char и длиной length"""
 	print(char * length + '\n')
 
-def big_divide(char: str = '=', length: int = 50) -> None:
-	"""Большой разделитель по умолчанию с символом '=' и длиной 50"""
+def big_divide(char: str = '—', length: int = 50) -> None:
+	"""Большой разделитель"""
 	divide(char, length)
 
 
