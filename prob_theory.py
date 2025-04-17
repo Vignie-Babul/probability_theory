@@ -8,7 +8,7 @@ def strd(n: int | float) -> decimal.Decimal:
 
 def divide(char: str = '-', length: int = 30) -> None:
 	"""Разделитель с символом char и длиной length"""
-	print(char * length)
+	print(char * length + '\n')
 
 def big_divide(char: str = '=', length: int = 50) -> None:
 	"""Большой разделитель по умолчанию с символом '=' и длиной 50"""
@@ -55,6 +55,7 @@ def distr_F(xi: tuple[int], pi: tuple[decimal.Decimal]) -> None:
 	p = pi[-1]
 	p_sum += p
 	print(f'{f"x >  {x}":>11}{sep}F(x) = {cur_p} + {p} = {p_sum}\n')
+	big_divide()
 
 
 # ---------- распределение Пуассона
