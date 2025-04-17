@@ -6,9 +6,9 @@ def strd(n: int | float) -> decimal.Decimal:
 	"""Правильная конвертация числа в decimal.Decimal"""
 	return decimal.Decimal(str(n))
 
-def divide(lenght: int = 30) -> None:
-	"""Разделитель с длиной lenght"""
-	print('-' * lenght)
+def divide(length: int = 30) -> None:
+	"""Разделитель с длиной length"""
+	print('-' * length)
 
 
 # ---------- общее
