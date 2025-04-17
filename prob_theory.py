@@ -75,10 +75,7 @@ def pois_distr(k: int, l: int, t: int = 1) -> decimal.Decimal:
 
 	return result
 
-def pois_M(l: int) -> decimal.Decimal:
-	return strd(l)
-
-def pois_D(l: int) -> decimal.Decimal:
+def pois_MD(l: int) -> decimal.Decimal:
 	return strd(l)
 
 def pois_distr_calc(max_k: int, l: int, t: int = 1, min_k: int = 0) -> None:
@@ -87,6 +84,7 @@ def pois_distr_calc(max_k: int, l: int, t: int = 1, min_k: int = 0) -> None:
 	for k in range(min_k, max_k + 1):
 		pois_distr(k, l, t)
 
+	print(f'M(x) = D(x) =', pois_MD(l))
 	divide()
 
 
