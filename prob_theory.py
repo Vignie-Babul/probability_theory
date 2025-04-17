@@ -81,6 +81,7 @@ def pois_distr(k: int, l: int, t: int = 1) -> decimal.Decimal:
 	return result
 
 def pois_MD(l: int) -> decimal.Decimal:
+	"""Мат ожидание и дисперсия распределения Пуассона"""
 	return strd(l)
 
 def pois_distr_calc(max_k: int, l: int, t: int = 1, min_k: int = 0) -> None:
@@ -89,8 +90,9 @@ def pois_distr_calc(max_k: int, l: int, t: int = 1, min_k: int = 0) -> None:
 	for k in range(min_k, max_k + 1):
 		pois_distr(k, l, t)
 
-	print(f'M(x) = D(x) =', pois_MD(l))
 	divide()
+	print(f'M(x) = D(x) =', pois_MD(l), '\n')
+	big_divide()
 
 
 # ---------- формула Бернулли
@@ -122,10 +124,6 @@ def bern_form_calc(n: int, max_k: int, p: float, min_k: int = 0) -> tuple[decima
 	"""Вычисление формулы Бернулли от min_k до max_k"""
 
 	Pi = [bern_form(n=n, k=k, p=p) for k in range(min_k, max_k + 1)]
-
-	divide()
-	print(f'P sum = {sum(Pi)}\n')
-
 	return Pi
 
 def bern_M(xi: tuple[int], pi: tuple[decimal.Decimal]) -> decimal.Decimal:
@@ -168,8 +166,11 @@ def bern_analysis(n: int, max_k: int, p: int) -> None:
 
 	xi = range(max_k + 1)
 	pi = bern_form_calc(n, max_k, p)
+	divide()
 
 	bern_MD_calc(xi, pi)
+	divide()
+
 	distr_F(xi, pi)
 
 
@@ -184,7 +185,7 @@ def geom_distr(p: float, k: int) -> decimal.Decimal:
 	qk = q_ ** strd(k-1)
 	result = qk * p_
 
-	print(f'P({k}) = {q}**{k-1} * {p} =\n{result}\n')
+	print(f'P({k}) = {q}**{k-1} * {p} =\n= {result}\n')
 	return result
 
 def geom_distr_M(p: float) -> decimal.Decimal:
@@ -208,7 +209,8 @@ def geom_distr_calc(p: float, max_k: int) -> None:
 
 	divide()
 	print(f'M(x) =', geom_distr_M(p))
-	print(f'D(x) =', geom_distr_D(p))
+	print(f'D(x) =', geom_distr_D(p), '\n')
+	big_divide()
 
 
 # ---------- гипергеометрическое распределение
@@ -221,7 +223,7 @@ def hypergeom_distr(N: int, M: int, n: int, k: int) -> decimal.Decimal:
 	third = C(n, N)
 	result = (first*second) / third
 
-	print(f'P({k}) = {result}')
+	print(f'P({k}) = {result}\n')
 	return result
 
 def hypergeom_distr_M(N: int, M: int, n: int) -> decimal.Decimal:
@@ -250,7 +252,8 @@ def hypergeom_distr_calc(N: int, M: int, n: int) -> None:
 
 	divide()
 	print('M(x) =', hypergeom_distr_M(N, M, n))
-	print('D(x) =', hypergeom_distr_D(N, M, n))
+	print('D(x) =', hypergeom_distr_D(N, M, n), '\n')
+	big_divide()
 
 
 # ----- гипергеометрическое распределение в дробях
@@ -294,4 +297,5 @@ def frac_hypergeom_distr_calc(N: int, M: int, n: int) -> None:
 
 	divide()
 	print('M(x) =', frac_hypergeom_distr_M(N, M, n))
-	print('D(x) =', frac_hypergeom_distr_D(N, M, n))
+	print('D(x) =', frac_hypergeom_distr_D(N, M, n), '\n')
+	big_divide()
