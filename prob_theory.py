@@ -75,6 +75,12 @@ def pois_distr(k: int, l: int, t: int = 1) -> decimal.Decimal:
 
 	return result
 
+def pois_M(l: int) -> decimal.Decimal:
+	return strd(l)
+
+def pois_D(l: int) -> decimal.Decimal:
+	return strd(l)
+
 def pois_distr_calc(max_k: int, l: int, t: int = 1, min_k: int = 0) -> None:
 	"""Вычисление распределения Пуассона"""
 
